@@ -1,0 +1,38 @@
+
+import './App.css';
+import HOC from './components/HOC';
+
+function App({ value }) {
+
+  console.log(value)
+
+  return (
+    <>
+      <h1>{value.name1}</h1>
+      <h1>{value.age}</h1>
+      <h1>{value.hair}</h1>
+      <h1>{value.language}</h1>
+    </>
+  );
+}
+
+export default HOC(App);
+
+//////////////////////////////////////////////////////////// HOC ///////////////////////////////////////////////////////////////
+
+
+
+function HOC(Component) {
+    const sample = {
+        name1: "Disha",
+        age: "20",
+        hair: "black",
+        language: "c++",
+    };
+    return () => <Component value={sample} />
+
+
+
+}
+
+export default HOC;
